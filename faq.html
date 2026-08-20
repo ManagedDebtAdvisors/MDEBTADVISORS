@@ -133,7 +133,7 @@
         }
 
         .faq-item.active .faq-answer {
-            max-height: 250px;
+            max-height: 300px;
             padding: 1.2rem 1.5rem;
             border-top: 1px solid var(--border-color);
         }
@@ -206,43 +206,43 @@
     <!-- Main Content Area -->
     <main>
         <div class="page-title">
-            <h1>Frequently Asked Questions</h1>
-            <p>Find answers to common queries regarding debt review and our advisory services.</p>
+            <h1>Debt Review Removal FAQ</h1>
+            <p>Find answers to common questions about removing debt review flags and clearing your credit record.</p>
         </div>
 
         <div class="faq-container">
             <div class="faq-item">
-                <button class="faq-question">What is Debt Review (Debt Counselling)?</button>
+                <button class="faq-question">Can I be removed from debt review?</button>
                 <div class="faq-answer">
-                    <p>Debt review is a legal process regulated by the National Credit Act (NCA) designed to assist over-indebted consumers by restructuring their monthly debt payments into one affordable consolidated monthly installment.</p>
+                    <p>Yes. You can be removed from debt review if all accounts included in your debt restructuring plan have been fully paid off, or if you can demonstrate that you were incorrectly placed under debt review without proper consent or a court order.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">How does the debt restructuring process work?</button>
+                <button class="faq-question">What is a Form 19 (Clearance Certificate)?</button>
                 <div class="faq-answer">
-                    <p>We evaluate your budget, calculate an affordable monthly repayment amount, and negotiate reduced interest rates and lower installments directly with your credit providers.</p>
+                    <p>A Form 19 Clearance Certificate is an official document issued by a registered Debt Counsellor confirming that all your debt review obligations have been met. This certificate is submitted to all credit bureaus to remove the debt review indicator from your profile.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">Will my credit providers still contact me?</button>
+                <button class="faq-question">How long does it take to update my credit status?</button>
                 <div class="faq-answer">
-                    <p>Once you are placed under debt review, credit providers are legally barred from contacting you directly or taking legal action against you regarding the debts included in the process.</p>
+                    <p>Once the Clearance Certificate (Form 19) or rescission order is submitted to the major credit bureaus (Experian, TransUnion, XDS, Compuscan), it typically takes 5 to 21 working days for your credit status to reflect as fully cleared.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">Can I apply for credit while under debt review?</button>
+                <button class="faq-question">What if I was placed under debt review without my consent?</button>
                 <div class="faq-answer">
-                    <p>No. The goal of debt review is to help you become debt-free. Until you receive a Clearance Certificate, you cannot take out additional loans or credit arrangements.</p>
+                    <p>If you were fraudulently or mistakenly registered under debt review without signing agreement documents, we can initiate a dispute and legal investigation process to have the flag legally declared invalid and removed.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">How do I exit debt review?</button>
+                <button class="faq-question">Can I apply for new credit after debt review removal?</button>
                 <div class="faq-answer">
-                    <p>Once all restructured debts (excluding a home loan) are fully paid off according to your debt review order, a Clearance Certificate is issued, clearing your record across all credit bureaus.</p>
+                    <p>Yes. Once the debt review status is officially removed from all credit bureau records, you are free to apply for home loans, vehicle financing, and credit cards according to standard affordability assessments.</p>
                 </div>
             </div>
         </div>
@@ -275,10 +275,10 @@
             question.addEventListener('click', () => {
                 const isActive = item.classList.contains('active');
                 
-                // Close all items
+                // Close all open accordion items
                 faqItems.forEach(i => i.classList.remove('active'));
 
-                // Toggle current item
+                // Open clicked item if it wasn't already open
                 if (!isActive) {
                     item.classList.add('active');
                 }
