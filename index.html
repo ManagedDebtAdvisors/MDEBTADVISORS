@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Managed Debt Advisors | Home</title>
+    <title>Managed Debt Advisors | About Us</title>
     <!-- Google Fonts for crisp typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +11,7 @@
     
     <style>
       :root {
-        --bg-dark: #FF5B00;
+        --bg-dark: #FF5B00; /* Updated from #0f1e36 to orange */
         --bg-dark-accent: #172a46;
         --bg-light: #f3f4f6;
         --text-dark: #1f2937;
@@ -62,9 +62,10 @@
         .glow-text {
             position: relative;
             display: inline-block;
-            color: #ffffff !important;
+            color: #ffffff !important; /* Keep the base text solid white */
         }
 
+        /* Moving Orange Glow Layer */
         .glow-text::after {
             content: attr(data-text);
             position: absolute;
@@ -89,15 +90,16 @@
             pointer-events: none;
         }
 
+        /* Animation: 2x Left to Right, 2x Right to Left */
         @keyframes sweepGlow {
             0% { background-position: -200% 0; }
-            20% { background-position: 200% 0; }
+            20% { background-position: 200% 0; }   /* Pass 1: Left to Right */
             25% { background-position: -200% 0; }  
-            45% { background-position: 200% 0; }
+            45% { background-position: 200% 0; }   /* Pass 2: Left to Right */
             50% { background-position: 200% 0; }   
-            70% { background-position: -200% 0; }
+            70% { background-position: -200% 0; }  /* Pass 1: Right to Left */
             75% { background-position: 200% 0; }   
-            95% { background-position: -200% 0; }
+            95% { background-position: -200% 0; }  /* Pass 2: Right to Left */
             100% { background-position: -200% 0; }
         }
 
@@ -111,7 +113,7 @@
         }
 
         .header-title .glow-text {
-            color: #1f2937 !important;
+            color: #1f2937 !important; /* Header on light background stays dark for base visibility */
         }
 
         .header-divider {
@@ -169,19 +171,19 @@
         }
 
         .btn-get-started {
-            background-color: #ffffff;
-            color: #000000;
+            background-color: #ffffff; /* Changed to white */
+            color: #000000;            /* Changed to black text */
             padding: 0.5rem 1.2rem;
             border-radius: 4px;
             text-decoration: none;
             font-size: 0.875rem;
-            font-weight: 600;
+            font-weight: 600;          /* Slightly bolder for contrast */
             transition: background-color 0.2s, color 0.2s;
             border: 1px solid #ffffff;
         }
 
         .btn-get-started:hover {
-            background-color: #f3f4f6;
+            background-color: #f3f4f6; /* Optional soft light gray on hover */
             color: #000000;
         }
 
@@ -374,7 +376,7 @@
             background-color: #e05000;
         }
 
-        /* --- Custom Orange Footer --- */
+        /* --- Custom Orange Footer (Matched to Reference Layout) --- */
         .site-footer {
             background-color: #FF5B00;
             color: #ffffff;
@@ -542,12 +544,13 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="breadcrumb">
-            <span>Home</span>
+       <div class="breadcrumb">
+            <a href="index.html">Home</a> / <span>About</span>
         </div>
-        <h1>Welcome to <span class="glow-text" data-text="Managed Debt Advisors">Managed Debt Advisors</span></h1>
+        <h1>About <span class="glow-text" data-text="Managed Debt Advisors">Managed Debt Advisors</span></h1>
         <p>Your trusted partner in debt review removal and financial recovery solutions.</p>
         
+        <!-- White Button in Centered Block -->
         <div class="consultant-cta-block">
             <a href="contact.html" class="btn-speak-consultant">Speak to a Consultant</a>
         </div>
@@ -555,25 +558,69 @@
 
     <!-- Content Container -->
     <main class="container">
+        
+        <!-- Top Grid (3 Columns) -->
         <div class="grid grid-3">
             <div class="card">
-                <h3>Our Services</h3>
-                <p>We specialize in <strong>Debt Review Removal</strong> to clear your status via Clearance Certificates or Court Order Rescissions.</p>
-                <p style="margin-top: 0.5rem;"><a href="services.html">Learn More &rarr;</a></p>
+                <h3>Our Mission</h3>
+                <p>To provide professional, ethical, and effective debt review removal services that help individuals regain control of their finances and achieve financial freedom. We are committed to treating every client with respect, dignity, and understanding.</p>
             </div>
 
             <div class="card">
-                <h3>Our Process</h3>
-                <p>A simple, transparent process to assess your situation and handle all legal clearing requirements efficiently.</p>
-                <p style="margin-top: 0.5rem;"><a href="process.html">View Process &rarr;</a></p>
+                <h3>Our Services</h3>
+                <p>We specialize in : <strong>Debt Review Removal</strong> to clear your status either via a Clearance Certificate for settled accounts or through a Court Order Rescission if you were wrongfully listed .</p>
+            </div>
+
+            <div class="card">
+                <h3>Our Approach</h3>
+                <p>We believe in transparent communication, personalized guidance throughout your debt review removal journey. Our experienced team works diligently to find the best possible outcomes for your financial situation.</p>
+            </div>
+        </div>
+
+        <!-- Middle Grid (2 Columns) -->
+        <div class="grid grid-2" style="margin-top: 1.5rem;">
+            <div class="card">
+                <h3>Why Choose Us</h3>
+                <p>With a commitment to excellence and client satisfaction, we provide comprehensive support from initial consultation through to debt review removal. We understand the stress of financial difficulties and are here to help you every step of the way.</p>
             </div>
 
             <div class="card">
                 <h3>NCR Registered</h3>
-                <p>We operate in strict compliance with the National Credit Regulator (NCR Registration: <strong>NCRDC3327</strong>).</p>
-                <p style="margin-top: 0.5rem;"><a href="about%20us.html">Read About Us &rarr;</a></p>
+                <p>Managed Debt Advisors is registered with the National Credit Regulator (NCR Registration Number: <strong>NCRDC3327</strong>). This ensures we operate in compliance with all regulatory requirements and maintain the highest standards of professional service.</p>
             </div>
         </div>
+
+        <!-- Location Section -->
+        <h2 class="section-title">Our Location</h2>
+
+        <!-- Bottom Grid (3 Columns) -->
+        <div class="grid grid-3">
+            <div class="card">
+                <h3>Office Address</h3>
+                <p>3 Seafarer Drive<br>
+                Bayview<br>
+                Cape Town, South Africa 7798</p>
+            </div>
+
+            <div class="card">
+                <h3>Contact Information</h3>
+                <p style="line-height: 1.8;">
+                    <strong>Email:</strong><br>
+                    <a href="mailto:info@mdebtadvisors.co.za">info@mdebtadvisors.co.za</a><br>
+                    <strong>Contact:</strong> <a href="tel:000 000 0000">000 000 0000</a><br>
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Operating Hours</h3>
+                <p>
+                    <strong>Monday - Friday:</strong> 8:00 AM - 5:00 PM<br>
+                    <strong>Saturday:</strong> Closed<br>
+                    <strong>Sunday:</strong> Closed
+                </p>
+            </div>
+        </div>
+
     </main>
 
     <!-- Footer CTA & Formspree Form -->
@@ -581,7 +628,9 @@
         <h2>Ready to Get Started?</h2>
         
         <div class="form-container">
+            <!-- REPLACE 'YOUR_FORM_ID' WITH YOUR ACTUAL FORMSPREE ENDPOINT -->
             <form action="https://formspree.io/f/mgawrbpd" method="POST">
+                
                 <div class="form-group">
                     <label for="first_name">Name</label>
                     <input type="text" id="first_name" name="first_name" placeholder="John" required>
@@ -627,11 +676,9 @@
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="process.html">Process</a></li>
                     <li><a href="about%20us.html">About Us</a></li>
                     <li><a href="faq.html">FAQ</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="location.html">Location</a></li>
                 </ul>
             </div>
             <div class="footer-col">
