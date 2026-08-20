@@ -11,15 +11,15 @@
     
     <style>
       :root {
-    --bg-dark: #FF5B00; /* Updated from #0f1e36 to orange */
-    --bg-dark-accent: #172a46;
-    --bg-light: #f3f4f6;
-    --text-dark: #1f2937;
-    --text-muted: #6b7280;
-    --accent-blue: #00bcd4;
-    --button-blue: #1d4ed8;
-    --card-border: #e5e7eb;
-}
+        --bg-dark: #FF5B00; /* Updated from #0f1e36 to orange */
+        --bg-dark-accent: #172a46;
+        --bg-light: #f3f4f6;
+        --text-dark: #1f2937;
+        --text-muted: #6b7280;
+        --accent-blue: #00bcd4;
+        --button-blue: #1d4ed8;
+        --card-border: #e5e7eb;
+      }
 
         * {
             box-sizing: border-box;
@@ -170,22 +170,23 @@
             color: #ffffff;
         }
 
-    .btn-get-started {
-    background-color: #ffffff; /* Changed to white */
-    color: #000000;            /* Changed to black text */
-    padding: 0.5rem 1.2rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 0.875rem;
-    font-weight: 600;          /* Slightly bolder for contrast */
-    transition: background-color 0.2s, color 0.2s;
-    border: 1px solid #ffffff;
-}
+        .btn-get-started {
+            background-color: #ffffff; /* Changed to white */
+            color: #000000;            /* Changed to black text */
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 600;          /* Slightly bolder for contrast */
+            transition: background-color 0.2s, color 0.2s;
+            border: 1px solid #ffffff;
+        }
 
-.btn-get-started:hover {
-    background-color: #f3f4f6; /* Optional soft light gray on hover */
-    color: #000000;
-}
+        .btn-get-started:hover {
+            background-color: #f3f4f6; /* Optional soft light gray on hover */
+            color: #000000;
+        }
+
         /* --- Hero Section --- */
         .hero {
             background-color: var(--bg-dark);
@@ -195,16 +196,17 @@
             position: relative;
         }
 
-     .breadcrumb {
-    font-size: 0.8rem;
-    color: #ffffff;
-    margin-bottom: 2rem;
-}
+        .breadcrumb {
+            font-size: 0.8rem;
+            color: #ffffff;
+            margin-bottom: 2rem;
+        }
 
-.breadcrumb a {
-    color: #ffffff;
-    text-decoration: none;
-}
+        .breadcrumb a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
         .hero h1 {
             font-family: 'Cinzel', serif;
             font-size: 2.25rem;
@@ -213,12 +215,12 @@
             letter-spacing: 1px;
         }
 
-       .hero p {
-    color: #ffffff;
-    font-size: 0.95rem;
-    max-width: 600px;
-    margin: 0 auto;
-}
+        .hero p {
+            color: #ffffff;
+            font-size: 0.95rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
         /* --- Main Content Layout --- */
         .container {
@@ -252,11 +254,11 @@
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
-       .card:hover {
-    transform: translateY(-2px);
-    border-color: #FF5B00;
-    box-shadow: 0 0 20px rgba(255, 91, 0, 0.6), 0 4px 12px rgba(255, 91, 0, 0.2);
-}
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: #FF5B00;
+            box-shadow: 0 0 20px rgba(255, 91, 0, 0.6), 0 4px 12px rgba(255, 91, 0, 0.2);
+        }
 
         .card h3 {
             font-family: 'Cinzel', serif;
@@ -276,10 +278,10 @@
             color: var(--text-dark);
         }
 
-     .card a {
-    color: #FF5B00;
-    text-decoration: none;
-}
+        .card a {
+            color: #FF5B00;
+            text-decoration: none;
+        }
 
         .card a:hover {
             text-decoration: underline;
@@ -304,7 +306,7 @@
             margin: 0.5rem auto 0 auto;
         }
 
-        /* --- Footer CTA --- */
+        /* --- Footer CTA & Form --- */
         .footer-cta {
             text-align: center;
             padding: 4rem 1rem;
@@ -314,8 +316,64 @@
 
         .footer-cta h2 {
             font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             color: var(--bg-dark);
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 2rem auto 0 auto;
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: var(--text-dark);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--card-border);
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #FF5B00;
+            box-shadow: 0 0 0 3px rgba(255, 91, 0, 0.15);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: #FF5B00;
+            color: #ffffff;
+            padding: 0.85rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-submit:hover {
+            background-color: #e05000;
         }
 
         /* --- Responsive Tweaks --- */
@@ -368,8 +426,7 @@
 
     <!-- Top Header Banner -->
     <header class="top-header">
-       <!-- Line 241 -->
-<img src="images/logo.jpeg" alt="Managed Debt Advisors Logo" class="header-logo-img">
+        <img src="images/logo.jpeg" alt="Managed Debt Advisors Logo" class="header-logo-img">
         <div class="header-title-container">
             <h1 class="header-title"><span class="glow-text" data-text="MANAGED DEBT ADVISORS">MANAGED DEBT ADVISORS</span></h1>
             <div class="header-divider"></div>
@@ -471,9 +528,46 @@
 
     </main>
 
-    <!-- Footer CTA -->
+    <!-- Footer CTA & Formspree Form -->
     <section class="footer-cta">
         <h2>Ready to Get Started?</h2>
+        
+        <div class="form-container">
+            <!-- REPLACE 'YOUR_FORM_ID' WITH YOUR ACTUAL FORMSPREE ENDPOINT -->
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                
+                <div class="form-group">
+                    <label for="first_name">Name</label>
+                    <input type="text" id="first_name" name="first_name" placeholder="John" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="surname">Surname</label>
+                    <input type="text" id="surname" name="surname" placeholder="Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="id_number">ID Number</label>
+                    <input type="text" id="id_number" name="id_number" placeholder="Enter your ID number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Contact Number</label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        placeholder="0821234567" 
+                        pattern="^0[0-9]{9}$" 
+                        title="Must be 10 digits starting with 0 (e.g. 0821234567)" 
+                        maxlength="10" 
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="btn-submit">Submit</button>
+            </form>
+        </div>
     </section>
 
 </body>
