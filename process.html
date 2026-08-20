@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Managed Debt Advisors | Our Process</title>
+    <!-- Google Fonts for crisp typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+      :root {
+        --bg-dark: #FF5B00;
+        --bg-dark-accent: #172a46;
+        --bg-light: #f3f4f6;
+        --text-dark: #1f2937;
+        --text-muted: #6b7280;
+        --accent-blue: #00bcd4;
+        --button-blue: #1d4ed8;
+        --card-border: #e5e7eb;
+      }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- Top Logo Header Banner --- */
+        .top-header {
+            background-color: #e2e8f0;
+            padding: 1.5rem 5% 1rem 5%;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            position: relative;
+        }
+
+        .header-logo-img {
+            width: 110px;
+            height: 110px;
+            object-fit: contain;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .header-title-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        /* --- Solid White Text with Sweeping Orange Glow Overlay --- */
+        .glow-text {
+            position: relative;
+            display: inline-block;
+            color: #ffffff !important;
+        }
+
+        .glow-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: linear-gradient(
+                90deg, 
+                transparent 0%, 
+                rgba(255, 91, 0, 0.4) 20%, 
+                #FF5B00 50%, 
+                rgba(255, 91, 0, 0.4) 80%, 
+                transparent 100%
+            );
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 12px #FF5B00);
+            animation: sweepGlow 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes sweepGlow {
+            0% { background-position: -200% 0; }
+            20% { background-position: 200% 0; }
+            25% { background-position: -200% 0; }  
+            45% { background-position: 200% 0; }
+            50% { background-position: 200% 0; }   
+            70% { background-position: -200% 0; }
+            75% { background-position: 200% 0; }   
+            95% { background-position: -200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .header-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.75rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .header-title .glow-text {
+            color: #1f2937 !important;
+        }
+
+        .header-divider {
+            width: 100%;
+            height: 4px;
+            background-color: var(--bg-dark);
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .header-divider::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -4px;
+            width: 12px;
+            height: 12px;
+            background-color: var(--bg-dark);
+        }
+
+        /* --- Main Navigation Bar --- */
+        nav.main-nav {
+            background-color: var(--bg-dark);
+            color: white;
+            padding: 0.8rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-logo-text {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        .btn-get-started {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: background-color 0.2s, color 0.2s;
+            border: 1px solid #ffffff;
+        }
+
+        .btn-get-started:hover {
+            background-color: #f3f4f6;
+            color: #000000;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background-color: var(--bg-dark);
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem 5rem 1rem;
+            position: relative;
+        }
+
+        .breadcrumb {
+            font-size: 0.8rem;
+            color: #ffffff;
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumb a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            color: #ffffff;
+            font-size: 0.95rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .consultant-cta-block {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn-speak-consultant {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #000000;
+            padding: 0.75rem 1.75rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 700;
+            border: 2px solid #ffffff;
+            transition: background-color 0.2s, color 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-speak-consultant:hover {
+            background-color: #f3f4f6;
+            color: #000000;
+        }
+
+        /* --- Main Content Layout --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        }
+
+        /* --- Cards & Process Badges --- */
+        .card {
+            background: #ffffff;
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 1.75rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: #FF5B00;
+            box-shadow: 0 0 20px rgba(255, 91, 0, 0.6), 0 4px 12px rgba(255, 91, 0, 0.2);
+        }
+
+        .step-badge {
+            display: inline-block;
+            background-color: #FF5B00;
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: var(--bg-dark);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .card p, .card ul {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .card ul {
+            list-style-type: disc;
+            padding-left: 1.25rem;
+        }
+
+        .card ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        .card strong {
+            color: var(--text-dark);
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 1.75rem;
+            color: var(--bg-dark);
+            margin: 4rem 0 2rem 0;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background-color: var(--bg-dark);
+            margin: 0.5rem auto 0 auto;
+        }
+
+        /* --- Footer CTA & Form --- */
+        .footer-cta {
+            text-align: center;
+            padding: 4rem 1rem;
+            background-color: #e5e7eb;
+            margin-top: 4rem;
+        }
+
+        .footer-cta h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.75rem;
+            color: var(--bg-dark);
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 2rem auto 0 auto;
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: var(--text-dark);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--card-border);
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #FF5B00;
+            box-shadow: 0 0 0 3px rgba(255, 91, 0, 0.15);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: #FF5B00;
+            color: #ffffff;
+            padding: 0.85rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-submit:hover {
+            background-color: #e05000;
+        }
+
+        /* --- Custom Orange Footer --- */
+        .site-footer {
+            background-color: #FF5B00;
+            color: #ffffff;
+            padding: 4rem 5% 2rem 5%;
+            font-size: 0.875rem;
+        }
+
+        .footer-content-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+        }
+
+        .footer-col p {
+            color: #ffffff;
+            line-height: 1.6;
+            font-size: 0.875rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .footer-social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: #ffffff;
+            text-decoration: none;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            transition: opacity 0.2s;
+        }
+
+        .footer-social-link:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .footer-social-link svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .footer-divider-line {
+            max-width: 1100px;
+            margin: 0 auto 2rem auto;
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.8rem;
+            line-height: 1.8;
+        }
+
+        .footer-bottom a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* --- Responsive Tweaks --- */
+        @media (max-width: 768px) {
+            .top-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .header-title {
+                font-size: 1.8rem;
+            }
+            nav.main-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Header Banner -->
+    <header class="top-header">
+        <img src="images/logo.jpeg" alt="Managed Debt Advisors Logo" class="header-logo-img">
+        <div class="header-title-container">
+            <h1 class="header-title"><span class="glow-text" data-text="MANAGED DEBT ADVISORS">MANAGED DEBT ADVISORS</span></h1>
+            <div class="header-divider"></div>
+        </div>
+    </header>
+
+    <!-- Navigation Header -->
+    <nav class="main-nav">
+        <div class="nav-logo-text"><span class="glow-text" data-text="Managed Debt Advisors">Managed Debt Advisors</span></div>
+        <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="about.html#contact">Contact</a></li>
+            <li><a href="about.html#location">Location</a></li>
+            <li><a href="process.html#form" class="btn-get-started">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> / <span>Process</span>
+        </div>
+        <h1>Our <span class="glow-text" data-text="Process">Process</span></h1>
+        <p>A step-by-step roadmap to legally clear your debt review status and restore your financial freedom.</p>
+        
+        <div class="consultant-cta-block">
+            <a href="#form" class="btn-speak-consultant">Speak to a Consultant</a>
+        </div>
+    </section>
+
+    <!-- Content Container -->
+    <main class="container">
+        
+        <!-- Step-by-Step Overview Grid -->
+        <h2 class="section-title">How It Works</h2>
+
+        <div class="grid grid-3">
+            <div class="card">
+                <span class="step-badge">Step 1</span>
+                <h3>Initial Consultation</h3>
+                <p>We perform a free assessment of your credit profile and debt review status to determine your eligibility for removal and gather the necessary documents.</p>
+            </div>
+
+            <div class="card">
+                <span class="step-badge">Step 2</span>
+                <h3>Legal & NCR Audit</h3>
+                <p>Our specialists review your existing debt review status, credit provider records, and court documents to establish the correct legal pathway for removal.</p>
+            </div>
+
+            <div class="card">
+                <span class="step-badge">Step 3</span>
+                <h3>Clearance or Court Order</h3>
+                <p>Depending on your scenario, we issue a <strong>Form 19 Clearance Certificate</strong> (if settled) or proceed with a <strong>Court Order Rescission</strong> (if wrongly listed).</p>
+            </div>
+        </div>
+
+        <div class="grid grid-2" style="margin-top: 1.5rem;">
+            <div class="card">
+                <span class="step-badge">Step 4</span>
+                <h3>Credit Bureau Notification</h3>
+                <p>We submit all signed legal documentation and clearance certificates to all registered South African credit bureaus (TransUnion, Experian, XDS, Compuscan).</p>
+            </div>
+
+            <div class="card">
+                <span class="step-badge">Step 5</span>
+                <h3>Profile Clearance</h3>
+                <p>The credit bureaus update their systems, removing the debt review flag from your profile. You are provided with an updated clearance confirmation.</p>
+            </div>
+        </div>
+
+        <!-- Detailed Pathways Section -->
+        <h2 class="section-title">Two Pathways to Freedom</h2>
+
+        <div class="grid grid-2">
+            <div class="card">
+                <h3>Pathway A: Clearance Certificate</h3>
+                <p style="margin-bottom: 0.75rem;">Ideal for clients who have settled their short-term obligations and home loan arrangements under debt review[cite: 1]:</p>
+                <ul>
+                    <li>Collect Paid-Up Letters from all credit providers[cite: 1].</li>
+                    <li>Verify all accounts are fully settled or in good standing[cite: 1].</li>
+                    <li>Issue the official Form 19 Clearance Certificate[cite: 1].</li>
+                    <li>Notify credit bureaus to clear your record[cite: 1].</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Pathway B: Court Order Rescission</h3>
+                <p style="margin-bottom: 0.75rem;">Ideal for clients who were fraudulently, erroneously, or wrongfully placed under debt review[cite: 1]:</p>
+                <ul>
+                    <li>Draft an affidavit detailing the circumstances of the wrongful listing[cite: 1].</li>
+                    <li>File an application in the Magistrate's Court[cite: 1].</li>
+                    <li>Obtain a court order rescinding the debt review[cite: 1].</li>
+                    <li>Instruct credit bureaus to permanently remove the flag[cite: 1].</li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer CTA & Formspree Form -->
+    <section class="footer-cta" id="form">
+        <h2>Start Your Process Today</h2>
+        
+        <div class="form-container">
+            <form action="https://formspree.io/f/mgawrbpd" method="POST">
+                
+                <div class="form-group">
+                    <label for="first_name">Name</label>
+                    <input type="text" id="first_name" name="first_name" placeholder="John" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="surname">Surname</label>
+                    <input type="text" id="surname" name="surname" placeholder="Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="id_number">ID Number</label>
+                    <input type="text" id="id_number" name="id_number" placeholder="Enter your ID number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Contact Number</label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        placeholder="0821234567" 
+                        pattern="^0[0-9]{9}$" 
+                        title="Must be 10 digits starting with 0 (e.g. 0821234567)" 
+                        maxlength="10" 
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="btn-submit">Submit Application</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-content-grid">
+            <div class="footer-col">
+                <h4>Managed Debt Advisors</h4>
+                <p>Professional debt review removal and financial solutions for a better future.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="process.html">Process</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="about.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <a href="#" class="footer-social-link">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                    Facebook
+                </a>
+                <a href="#" class="footer-social-link">
+                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    Instagram
+                </a>
+                <a href="#" class="footer-social-link">
+                    <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+        
+        <hr class="footer-divider-line">
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Managed Debt Advisors. All rights reserved. | <a href="#">Privacy Policy</a></p>
+            <p>NCR Registration Number: NCRDC3327</p>
+        </div>
+    </footer>
+
+</body>
+</html>
