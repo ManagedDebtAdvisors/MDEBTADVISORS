@@ -58,15 +58,45 @@
             width: 100%;
         }
 
+        /* --- Sweeping Orange Glow Effect --- */
+        .glow-text {
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(
+                90deg, 
+                rgba(255, 91, 0, 0) 0%, 
+                rgba(255, 91, 0, 0.2) 20%, 
+                #FF5B00 50%, 
+                rgba(255, 91, 0, 0.2) 80%, 
+                rgba(255, 91, 0, 0) 100%
+            );
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: sweepGlow 6s ease-in-out infinite;
+            filter: drop-shadow(0 0 8px rgba(255, 91, 0, 0.6));
+        }
+
+        /* 2x Left Pass, 2x Right Pass Animation Loop */
+        @keyframes sweepGlow {
+            0% { background-position: -200% 0; }
+            20% { background-position: 200% 0; }   /* Pass 1 Left to Right */
+            25% { background-position: -200% 0; }  
+            45% { background-position: 200% 0; }   /* Pass 2 Left to Right */
+            50% { background-position: 200% 0; }   
+            70% { background-position: -200% 0; }  /* Pass 1 Right to Left */
+            75% { background-position: 200% 0; }   
+            95% { background-position: -200% 0; }  /* Pass 2 Right to Left */
+            100% { background-position: -200% 0; }
+        }
+
         .header-title {
             font-family: 'Cinzel', serif;
             font-size: 2.75rem;
             font-weight: 700;
-            color: #718096;
             letter-spacing: 4px;
             text-transform: uppercase;
             line-height: 1.1;
-            text-shadow: -10px 0 15px #FF5B00, -25px 0 30px #FF5B00, 10px 0 15px #FF5B00, 25px 0 30px #FF5B00;
         }
 
         .header-divider {
@@ -102,9 +132,7 @@
             font-family: 'Cinzel', serif;
             font-size: 1.1rem;
             font-weight: 700;
-            color: #ffffff;
             letter-spacing: 0.5px;
-            text-shadow: -5px 0 8px #FF5B00, -12px 0 15px #FF5B00, 5px 0 8px #FF5B00, 12px 0 15px #FF5B00;
         }
 
         nav ul {
@@ -167,7 +195,6 @@
             font-weight: 600;
             margin-bottom: 1rem;
             letter-spacing: 1px;
-            text-shadow: -8px 0 12px #FF5B00, -20px 0 25px #FF5B00, 8px 0 12px #FF5B00, 20px 0 25px #FF5B00;
         }
 
         .hero p {
@@ -298,17 +325,16 @@
 
     <!-- Top Header Banner -->
     <header class="top-header">
-    <!-- CORRECT for relative path -->
-<img src="main/images/logo.JPEG" alt="Managed Debt Advisors Logo" class="header-logo-img">[cite: 3]
+        <img src="main/images/logo.JPEG" alt="Managed Debt Advisors Logo" class="header-logo-img">[cite: 3]
         <div class="header-title-container">
-            <h1 class="header-title">MANAGED DEBT ADVISORS</h1>
+            <h1 class="header-title"><span class="glow-text">MANAGED DEBT ADVISORS</span></h1>
             <div class="header-divider"></div>
         </div>
     </header>
 
     <!-- Navigation Header -->
     <nav class="main-nav">
-        <div class="nav-logo-text">Managed Debt Advisors</div>
+        <div class="nav-logo-text"><span class="glow-text">Managed Debt Advisors</span></div>
         <ul>
             <li><a href="#">Services</a></li>
             <li><a href="#">Process</a></li>
@@ -325,7 +351,7 @@
         <div class="breadcrumb">
             <a href="#">Home</a> / <span>About</span>
         </div>
-        <h1>About Managed Debt Advisors</h1>
+        <h1>About <span class="glow-text">Managed Debt Advisors</span></h1>
         <p>Your trusted partner in debt review and financial recovery solutions.</p>
     </section>
 
@@ -359,7 +385,7 @@
 
             <div class="card">
                 <h3>NCR Registered</h3>
-                <p>Managed Debt Advisors is registered with the National Credit Regulator (NCR Registration Number: <strong>NCRDC</strong>). This ensures we operate in compliance with all regulatory requirements and maintain the highest standards of professional service.</p>
+                <p><span class="glow-text">Managed Debt Advisors</span> is registered with the National Credit Regulator (NCR Registration Number: <strong>NCRDC</strong>). This ensures we operate in compliance with all regulatory requirements and maintain the highest standards of professional service.</p>
             </div>
         </div>
 
