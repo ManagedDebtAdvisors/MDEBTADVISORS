@@ -58,35 +58,48 @@
             width: 100%;
         }
 
-        /* --- Sweeping Orange Glow Effect --- */
+        /* --- Solid White Text with Sweeping Orange Glow Overlay --- */
         .glow-text {
             position: relative;
             display: inline-block;
+            color: #ffffff !important; /* Keep the base text solid white */
+        }
+
+        /* Moving Orange Glow Layer */
+        .glow-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
             background: linear-gradient(
                 90deg, 
-                rgba(255, 91, 0, 0) 0%, 
-                rgba(255, 91, 0, 0.2) 20%, 
+                transparent 0%, 
+                rgba(255, 91, 0, 0.4) 20%, 
                 #FF5B00 50%, 
-                rgba(255, 91, 0, 0.2) 80%, 
-                rgba(255, 91, 0, 0) 100%
+                rgba(255, 91, 0, 0.4) 80%, 
+                transparent 100%
             );
             background-size: 200% 100%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 12px #FF5B00);
             animation: sweepGlow 6s ease-in-out infinite;
-            filter: drop-shadow(0 0 8px rgba(255, 91, 0, 0.6));
+            pointer-events: none;
         }
 
-        /* 2x Left Pass, 2x Right Pass Animation Loop */
+        /* Animation: 2x Left to Right, 2x Right to Left */
         @keyframes sweepGlow {
             0% { background-position: -200% 0; }
-            20% { background-position: 200% 0; }   /* Pass 1 Left to Right */
+            20% { background-position: 200% 0; }   /* Pass 1: Left to Right */
             25% { background-position: -200% 0; }  
-            45% { background-position: 200% 0; }   /* Pass 2 Left to Right */
+            45% { background-position: 200% 0; }   /* Pass 2: Left to Right */
             50% { background-position: 200% 0; }   
-            70% { background-position: -200% 0; }  /* Pass 1 Right to Left */
+            70% { background-position: -200% 0; }  /* Pass 1: Right to Left */
             75% { background-position: 200% 0; }   
-            95% { background-position: -200% 0; }  /* Pass 2 Right to Left */
+            95% { background-position: -200% 0; }  /* Pass 2: Right to Left */
             100% { background-position: -200% 0; }
         }
 
@@ -97,6 +110,10 @@
             letter-spacing: 4px;
             text-transform: uppercase;
             line-height: 1.1;
+        }
+
+        .header-title .glow-text {
+            color: #1f2937 !important; /* Header on light background stays dark for base visibility */
         }
 
         .header-divider {
@@ -327,14 +344,14 @@
     <header class="top-header">
         <img src="main/images/logo.JPEG" alt="Managed Debt Advisors Logo" class="header-logo-img">[cite: 3]
         <div class="header-title-container">
-            <h1 class="header-title"><span class="glow-text">MANAGED DEBT ADVISORS</span></h1>
+            <h1 class="header-title"><span class="glow-text" data-text="MANAGED DEBT ADVISORS">MANAGED DEBT ADVISORS</span></h1>
             <div class="header-divider"></div>
         </div>
     </header>
 
     <!-- Navigation Header -->
     <nav class="main-nav">
-        <div class="nav-logo-text"><span class="glow-text">Managed Debt Advisors</span></div>
+        <div class="nav-logo-text"><span class="glow-text" data-text="Managed Debt Advisors">Managed Debt Advisors</span></div>
         <ul>
             <li><a href="#">Services</a></li>
             <li><a href="#">Process</a></li>
@@ -351,7 +368,7 @@
         <div class="breadcrumb">
             <a href="#">Home</a> / <span>About</span>
         </div>
-        <h1>About <span class="glow-text">Managed Debt Advisors</span></h1>
+        <h1>About <span class="glow-text" data-text="Managed Debt Advisors">Managed Debt Advisors</span></h1>
         <p>Your trusted partner in debt review and financial recovery solutions.</p>
     </section>
 
@@ -385,7 +402,7 @@
 
             <div class="card">
                 <h3>NCR Registered</h3>
-                <p><span class="glow-text">Managed Debt Advisors</span> is registered with the National Credit Regulator (NCR Registration Number: <strong>NCRDC</strong>). This ensures we operate in compliance with all regulatory requirements and maintain the highest standards of professional service.</p>
+                <p>Managed Debt Advisors is registered with the National Credit Regulator (NCR Registration Number: <strong>NCRDC</strong>). This ensures we operate in compliance with all regulatory requirements and maintain the highest standards of professional service.</p>
             </div>
         </div>
 
