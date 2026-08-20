@@ -280,11 +280,9 @@
     text-decoration: none;
 }
 
-     .card:hover {
-    transform: translateY(-2px);
-    border-color: #FF5B00;
-    box-shadow: 0 0 20px rgba(255, 91, 0, 0.6), 0 4px 12px rgba(255, 91, 0, 0.2);
-}
+        .card a:hover {
+            text-decoration: underline;
+        }
 
         /* --- Section Titles --- */
         .section-title {
@@ -337,6 +335,32 @@
                 justify-content: center;
             }
         }
+
+        /* --- Consultant Button Styles --- */
+        .consultant-cta-block {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn-speak-consultant {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #000000;
+            padding: 0.75rem 1.75rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 700;
+            border: 2px solid #ffffff;
+            transition: background-color 0.2s, color 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-speak-consultant:hover {
+            background-color: #f3f4f6;
+            color: #000000;
+        }
     </style>
 </head>
 <body>
@@ -365,19 +389,19 @@
         </ul>
     </nav>
 
-<!-- Hero Section -->
-<section class="hero">
-    <div class="breadcrumb">
-        <a href="#">Home</a> / <span>About</span>
-    </div>
-    <h1>About <span class="glow-text" data-text="Managed Debt Advisors">Managed Debt Advisors</span></h1>
-    <p>Your trusted partner in debt review removal and financial recovery solutions.</p>
-
-    <!-- White Container Block -->
-    <div class="consultant-cta-block">
-        <a href="#" class="btn-speak-consultant">Speak to a Consultant</a>
-    </div>
-</section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="breadcrumb">
+            <a href="#">Home</a> / <span>About</span>
+        </div>
+        <h1>About <span class="glow-text" data-text="Managed Debt Advisors">Managed Debt Advisors</span></h1>
+        <p>Your trusted partner in debt review removal and financial recovery solutions.</p>
+        
+        <!-- White Button in Centered Block -->
+        <div class="consultant-cta-block">
+            <a href="#" class="btn-speak-consultant">Speak to a Consultant</a>
+        </div>
+    </section>
 
     <!-- Content Container -->
     <main class="container">
