@@ -1,1 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions - Managed Debt Advisors</title>
+    <style>
+        :root {
+            --primary-color: #0d3b66;
+            --secondary-color: #f4d35e;
+            --text-color: #333333;
+            --bg-light: #f8f9fa;
+            --border-color: #e2e8f0;
+        }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo-container img {
+            height: 50px;
+            width: auto;
+            display: block;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: #1d70b8;
+            border-bottom: 2px solid #1d70b8;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .page-title h1 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-title p {
+            color: #666;
+        }
+
+        /* FAQ Accordion */
+        .faq-item {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.2rem 1.5rem;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.4rem;
+            line-height: 1;
+            transition: transform 0.2s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '−';
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background-color: #fafafa;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 250px;
+            padding: 1.2rem 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo-container">
+                <img src="images/logo.jpeg" alt="Managed Debt Advisors Logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about us.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="process.html">Process</a></li>
+                    <li><a href="faq.html" class="active">FAQ</a></li>
+                    <li><a href="location.html">Location</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <div class="page-title">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to common queries regarding debt review and our advisory services.</p>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">What is Debt Review (Debt Counselling)?</button>
+                <div class="faq-answer">
+                    <p>Debt review is a legal process regulated by the National Credit Act (NCA) designed to assist over-indebted consumers by restructuring their monthly debt payments into one affordable consolidated monthly installment.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">How does the debt restructuring process work?</button>
+                <div class="faq-answer">
+                    <p>We evaluate your budget, calculate an affordable monthly repayment amount, and negotiate reduced interest rates and lower installments directly with your credit providers.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Will my credit providers still contact me?</button>
+                <div class="faq-answer">
+                    <p>Once you are placed under debt review, credit providers are legally barred from contacting you directly or taking legal action against you regarding the debts included in the process.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Can I apply for credit while under debt review?</button>
+                <div class="faq-answer">
+                    <p>No. The goal of debt review is to help you become debt-free. Until you receive a Clearance Certificate, you cannot take out additional loans or credit arrangements.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">How do I exit debt review?</button>
+                <div class="faq-answer">
+                    <p>Once all restructured debts (excluding a home loan) are fully paid off according to your debt review order, a Clearance Certificate is issued, clearing your record across all credit bureaus.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Area -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="index.html">Home</a> |
+                <a href="about us.html">About Us</a> |
+                <a href="services.html">Services</a> |
+                <a href="process.html">Process</a> |
+                <a href="faq.html">FAQ</a> |
+                <a href="location.html">Location</a> |
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="copyright">
+                &copy; Managed Debt Advisors. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Accordion Script -->
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all items
+                faqItems.forEach(i => i.classList.remove('active'));
+
+                // Toggle current item
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
