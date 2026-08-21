@@ -3,173 +3,349 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Managed Debt Advisors</title>
+    <title>Contact Us | Managed Debt Advisors</title>
+    <!-- Google Fonts for crisp typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <style>
-        :root {
-            --primary: #1a252f;
-            --accent: #f39c12;
-            --light: #f8f9fa;
-            --dark: #2c3e50;
-            --text: #333;
-        }
+      :root {
+        --bg-dark: #FF5B00;
+        --bg-dark-accent: #172a46;
+        --bg-light: #f3f4f6;
+        --text-dark: #1f2937;
+        --text-muted: #6b7280;
+        --accent-blue: #00bcd4;
+        --button-blue: #1d4ed8;
+        --card-border: #e5e7eb;
+      }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             line-height: 1.6;
-            background-color: var(--light);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
         }
 
-        /* Header & Navigation */
-        header {
-            background-color: var(--primary);
-            padding: 1rem 5%;
+        /* --- Top Logo Header Banner --- */
+        .top-header {
+            background-color: #e2e8f0;
+            padding: 1.5rem 5% 1rem 5%;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            position: relative;
+        }
+
+        .header-logo-img {
+            width: 110px;
+            height: 110px;
+            object-fit: contain;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .header-title-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        /* --- Solid White Text with Sweeping Orange Glow Overlay --- */
+        .glow-text {
+            position: relative;
+            display: inline-block;
+            color: #ffffff !important;
+        }
+
+        /* Moving Orange Glow Layer */
+        .glow-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: linear-gradient(
+                90deg, 
+                transparent 0%, 
+                rgba(255, 91, 0, 0.4) 20%, 
+                #FF5B00 50%, 
+                rgba(255, 91, 0, 0.4) 80%, 
+                transparent 100%
+            );
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 12px #FF5B00);
+            animation: sweepGlow 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes sweepGlow {
+            0% { background-position: -200% 0; }
+            20% { background-position: 200% 0; }
+            25% { background-position: -200% 0; }  
+            45% { background-position: 200% 0; }
+            50% { background-position: 200% 0; }   
+            70% { background-position: -200% 0; }
+            75% { background-position: 200% 0; }   
+            95% { background-position: -200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .header-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.75rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .header-title .glow-text {
+            color: #1f2937 !important;
+        }
+
+        .header-divider {
+            width: 100%;
+            height: 4px;
+            background-color: var(--bg-dark);
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .header-divider::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -4px;
+            width: 12px;
+            height: 12px;
+            background-color: var(--bg-dark);
+        }
+
+        /* --- Main Navigation Bar --- */
+        nav.main-nav {
+            background-color: var(--bg-dark);
+            color: white;
+            padding: 0.8rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .logo-container img {
-            max-height: 50px;
-            width: auto;
+        .nav-logo-text {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         nav ul {
             display: flex;
             list-style: none;
             gap: 1.5rem;
+            align-items: center;
         }
 
         nav a {
             color: #ffffff;
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
+            font-size: 0.875rem;
+            transition: color 0.2s;
         }
 
-        nav a:hover, nav a.active {
-            color: var(--accent);
+        nav a:hover {
+            color: #ffffff;
         }
 
-        /* Page Layout */
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-            flex: 1;
+        .btn-get-started {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: background-color 0.2s, color 0.2s;
+            border: 1px solid #ffffff;
         }
 
-        .hero-title {
+        .btn-get-started:hover {
+            background-color: #f3f4f6;
+            color: #000000;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background-color: var(--bg-dark);
+            color: white;
             text-align: center;
+            padding: 4rem 1rem 5rem 1rem;
+            position: relative;
+        }
+
+        .breadcrumb {
+            font-size: 0.8rem;
+            color: #ffffff;
             margin-bottom: 2rem;
         }
 
-        .hero-title h1 {
-            color: var(--primary);
-            font-size: 2.2rem;
+        .breadcrumb a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            color: #ffffff;
+            font-size: 0.95rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- Main Content Layout --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
         }
 
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2.5rem;
-            background: #fff;
-            padding: 2.5rem;
+        }
+
+        /* --- Cards & Information --- */
+        .card {
+            background: #ffffff;
+            border: 1px solid var(--card-border);
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        /* Info Column */
-        .info-card h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: #FF5B00;
+            box-shadow: 0 0 20px rgba(255, 91, 0, 0.6), 0 4px 12px rgba(255, 91, 0, 0.2);
         }
 
-        .info-card p {
+        .card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            color: var(--bg-dark);
             margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
         }
 
         .details-list {
             list-style: none;
-            margin-top: 1.5rem;
         }
 
         .details-list li {
+            font-size: 0.9rem;
+            color: var(--text-dark);
             margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
         }
 
-        /* Form Styling */
+        .details-list a {
+            color: #FF5B00;
+            text-decoration: none;
+        }
+
+        .details-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Contact Form Styling --- */
         .contact-form {
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
+            gap: 1.25rem;
         }
 
         .form-group {
             display: flex;
             flex-direction: column;
-            gap: 0.4rem;
         }
 
         .form-group label {
+            display: block;
+            font-size: 0.875rem;
             font-weight: 600;
-            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+            color: var(--text-dark);
         }
 
-        .form-group input, 
+        .form-group input,
         .form-group textarea {
             width: 100%;
             padding: 0.75rem;
-            border: 1px solid #ccc;
+            border: 1px solid var(--card-border);
             border-radius: 4px;
-            font-size: 1rem;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
 
-        .form-group input:focus, 
+        .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 5px rgba(243, 156, 18, 0.5);
+            border-color: #FF5B00;
+            box-shadow: 0 0 0 3px rgba(255, 91, 0, 0.15);
         }
 
         .btn-submit {
-            background-color: var(--accent);
-            color: #fff;
-            border: none;
+            width: 100%;
+            background-color: #FF5B00;
+            color: #ffffff;
             padding: 0.85rem;
-            font-size: 1rem;
-            font-weight: bold;
+            border: none;
             border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background-color 0.2s;
         }
 
         .btn-submit:hover {
-            background-color: #d3830e;
+            background-color: #e05000;
         }
 
-         /* --- Custom Orange Footer (Matched to Reference Layout) --- */
+        /* --- Footer Section --- */
         .site-footer {
             background-color: #FF5B00;
             color: #ffffff;
             padding: 4rem 5% 2rem 5%;
             font-size: 0.875rem;
+            margin-top: 4rem;
         }
 
         .footer-content-grid {
@@ -259,19 +435,23 @@
             text-decoration: underline;
         }
 
-        /* Responsive Breakpoint */
+        /* --- Responsive Tweaks --- */
         @media (max-width: 768px) {
-            header {
+            .top-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .header-title {
+                font-size: 1.8rem;
+            }
+            nav.main-nav {
                 flex-direction: column;
                 gap: 1rem;
             }
-            
             nav ul {
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 1rem;
             }
-
             .contact-grid {
                 grid-template-columns: 1fr;
             }
@@ -280,74 +460,87 @@
 </head>
 <body>
 
-    <!-- Header Navigation Section -->
-    <header>
-        <div class="logo-container">
-            <a href="index.html">
-                <img src="images/logo.jpeg" alt="Managed Debt Advisors Logo">
-            </a>
+    <!-- Top Header Banner -->
+    <header class="top-header">
+        <img src="images/logo.jpeg" alt="Managed Debt Advisors Logo" class="header-logo-img">
+        <div class="header-title-container">
+            <h1 class="header-title"><span class="glow-text" data-text="MANAGED DEBT ADVISORS">MANAGED DEBT ADVISORS</span></h1>
+            <div class="header-divider"></div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="process.html">Our Process</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="location.html">Location</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <!-- Main Content Area -->
-    <main class="container">
-        <section class="hero-title">
-            <h1>Get in Touch</h1>
-            <p>We are here to assist you with your financial journey. Reach out today.</p>
-        </section>
+    <!-- Navigation Header -->
+    <nav class="main-nav">
+        <div class="nav-logo-text"><span class="glow-text" data-text="Managed Debt Advisors">Managed Debt Advisors</span></div>
+        <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a href="about%20us.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="location.html">Location</a></li>
+            <li><a href="contact.html" class="btn-get-started">Get Started</a></li>
+        </ul>
+    </nav>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> / <span>Contact Us</span>
+        </div>
+        <h1><span class="glow-text" data-text="Get In Touch">Get In Touch</span></h1>
+        <p>We are here to assist you with your financial journey. Reach out today.</p>
+    </section>
+
+    <!-- Content Container -->
+    <main class="container">
         <div class="contact-grid">
-            <!-- Contact Details -->
-            <div class="info-card">
+            
+            <!-- Contact Details Card -->
+            <div class="card">
                 <h3>Contact Information</h3>
                 <p>Have questions about debt review or need advice? Speak with our team directly.</p>
                 
                 <ul class="details-list">
-                    <li><strong>Phone:</strong> +27 (0) 21 000 0000</li>
-                    <li><strong>Email:</strong> info@manageddebt.co.za</li>
-                    <li><strong>Hours:</strong> Mon - Fri: 08:00 - 17:00</li>
+                    <li><strong>Phone:</strong> <a href="tel:0210000000">+27 (0) 21 000 0000</a></li>
+                    <li><strong>Email:</strong> <a href="mailto:info@mdebtadvisors.co.za">info@mdebtadvisors.co.za</a></li>
+                    <li><strong>Operating Hours:</strong> Mon - Fri: 08:00 - 17:00</li>
+                    <li><strong>Office Address:</strong> 3 Seafarer Drive, Bayview, Cape Town, 7798</li>
                 </ul>
             </div>
 
-            <!-- Web Form -->
-            <form class="contact-form" action="https://formspree.io/f/mgawrbpd" method="POST">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required placeholder="John Doe">
-                </div>
+            <!-- Web Form Card -->
+            <div class="card">
+                <h3>Send Us a Message</h3>
+                <form class="contact-form" action="https://formspree.io/f/mgawrbpd" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
 
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="john@example.com">
-                </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
 
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="082 123 4567">
-                </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="0821234567" pattern="^0[0-9]{9}$" title="Must be 10 digits starting with 0" maxlength="10" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="4" required placeholder="How can we help you?"></textarea>
-                </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" required placeholder="How can we help you?"></textarea>
+                    </div>
 
-                <button type="submit" class="btn-submit">Send Message</button>
-            </form>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+
         </div>
     </main>
 
-       <!-- Footer Section -->
+    <!-- Footer Section -->
     <footer class="site-footer">
         <div class="footer-content-grid">
             <div class="footer-col">
