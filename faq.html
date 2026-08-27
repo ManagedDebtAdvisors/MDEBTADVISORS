@@ -342,5 +342,24 @@
         </div>
     </footer>
 
+<!-- FAQ Accordion JavaScript -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                
+                // Optional: Close other open FAQ items when one is clicked
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                    }
+                });
+
+                // Toggle active class on clicked item
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+
 </body>
 </html>
