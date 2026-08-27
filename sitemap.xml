@@ -1,1 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
+    <!-- Homepage with Brand Logo Image -->
+    <url>
+        <loc>https://mdebtadvisors.co.za/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://mdebtadvisors.co.za/images/logo.jpeg</image:loc>
+            <image:title>Managed Debt Advisors Logo</image:title>
+        </image:image>
+    </url>
+
+    <!-- Core Services Page -->
+    <url>
+        <loc>https://mdebtadvisors.co.za/services.html</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Debt Review Process Page -->
+    <url>
+        <loc>https://mdebtadvisors.co.za/process.html</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Locations Served Page -->
+    <url>
+        <loc>https://mdebtadvisors.co.za/location.html</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Frequently Asked Questions -->
+    <url>
+        <loc>https://mdebtadvisors.co.za/faq.html</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- About Us Page -->
+    <url>
+        <loc>https://mdebtadvisors.co.za/about%20us.html</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Contact Page -->
+    <url>
+        <loc>https://mdebtadvisors.co.za/contact.html</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+</urlset>
